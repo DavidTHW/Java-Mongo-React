@@ -15,11 +15,9 @@ public class MovieService {
 
     //uses repo class to talk to database
     public List<Movie> findAllMovies() {
-       return movieRepository.findAll();
+        return movieRepository.findAll();
     }
-
-    public Optional<Movie> singleMovie(ObjectId id) {
-        return movieRepository.findById(id);
+    public Optional<Movie> singleMovie(String imdbId) {
+        return movieRepository.findMovieByImdbId(imdbId);
     }
-
 }

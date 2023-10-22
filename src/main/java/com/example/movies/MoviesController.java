@@ -22,9 +22,11 @@ public class MoviesController {
     public ResponseEntity<List<Movie>> getAllMovies() {
         return new ResponseEntity<List<Movie>>(movieService.findAllMovies() , HttpStatus.OK);
     }
-    @GetMapping("/{id}")
+
+    //dynamic properties example
+    @GetMapping("/{imdbId}")
     public ResponseEntity<
-    Optional<Movie>> getSingleMovie(@PathVariable ObjectId id) {
-        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(id), HttpStatus.OK);
+    Optional<Movie>> getSingleMovie(@PathVariable String imdbId) {
+        return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
     }
 }
