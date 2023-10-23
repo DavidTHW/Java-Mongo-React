@@ -29,4 +29,8 @@ public class MoviesController {
     Optional<Movie>> getSingleMovie(@PathVariable String imdbId) {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
     }
+    @GetMapping("/{genre}")
+    public ResponseEntity<Optional<List<Movie>>> getMovieByGenre(@PathVariable String genre) {
+        return new ResponseEntity<Optional<List<Movie>>>(movieService.findGenre(genre), HttpStatus.OK);
+    }
 }
