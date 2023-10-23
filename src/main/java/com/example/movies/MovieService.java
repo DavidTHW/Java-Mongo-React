@@ -21,8 +21,8 @@ public class MovieService {
         return movieRepository.findMovieByImdbId(imdbId);
     }
 
-    public List<Movie> findGenre(String genre) {
-        return movieRepository.findByGenre(genre);
+    public List<Movie> findGenre(String genres) {
+        return movieRepository.findByGenre(genres);
     }
 
 }

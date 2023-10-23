@@ -24,13 +24,13 @@ public class MoviesController {
     }
 
     //dynamic properties example
-    @GetMapping("/{imdbId}")
+    @GetMapping("/imdb/{imdbId}")
     public ResponseEntity<
     Optional<Movie>> getSingleMovie(@PathVariable String imdbId) {
         return new ResponseEntity<Optional<Movie>>(movieService.singleMovie(imdbId), HttpStatus.OK);
     }
-    @GetMapping("/{genre}")
-    public ResponseEntity <List<Movie>> getMovieByGenre(@PathVariable String genre) {
-        return new ResponseEntity <List<Movie>>(movieService.findGenre(genre), HttpStatus.OK);
+    @GetMapping("/genres/{genres}")
+    public ResponseEntity <List<Movie>> getMovieByGenre(@PathVariable String genres) {
+        return new ResponseEntity <List<Movie>>(movieService.findGenre(genres), HttpStatus.OK);
     }
 }

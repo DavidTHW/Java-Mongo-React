@@ -12,6 +12,6 @@ import java.util.Optional;
 public interface MovieRepository extends MongoRepository<Movie, ObjectId> {
 
     Optional<Movie> findMovieByImdbId(String imdbId);
-    @Query("{'genre' : ?0}")
-    List<Movie> findByGenre(String genre);
+    @Query("{'genres' : ?0}")
+    List<Movie> findByGenre(String genres);
 }
