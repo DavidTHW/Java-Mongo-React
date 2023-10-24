@@ -14,4 +14,7 @@ public interface MovieRepository extends MongoRepository<Movie, ObjectId> {
     Optional<Movie> findMovieByImdbId(String imdbId);
     @Query("{'genres' : ?0}")
     List<Movie> findByGenre(String genres);
+
+    @Query("{'title' : ?0}")
+    List<Movie> findByTitle(String title);
 }

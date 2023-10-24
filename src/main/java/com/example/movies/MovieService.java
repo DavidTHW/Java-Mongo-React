@@ -25,4 +25,7 @@ public class MovieService {
         return movieRepository.findByGenre(genres);
     }
 
+    public List<Movie> findByTitle(String title) {
+        return movieRepository.findByTitle(title);
+    }
 }

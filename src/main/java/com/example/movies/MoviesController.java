@@ -33,4 +33,8 @@ public class MoviesController {
     public ResponseEntity <List<Movie>> getMovieByGenre(@PathVariable String genres) {
         return new ResponseEntity <List<Movie>>(movieService.findGenre(genres), HttpStatus.OK);
     }
+    @GetMapping("/title/{title}")
+    public ResponseEntity <List<Movie>> getMovieByTitle(@PathVariable String title) {
+        return new ResponseEntity<List<Movie>>(movieService.findByTitle(title) , HttpStatus.OK);
+    }
 }
